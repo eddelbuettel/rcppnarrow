@@ -37,3 +37,6 @@ vignettes/*.pdf
 
 # Emacs
 *~
+
+# Local
+/local
