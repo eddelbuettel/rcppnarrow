@@ -9,7 +9,8 @@
 //' Describe An Arrow Schema
 //'
 //' @param ptr An external pointer object for an \code{ArrowSchema} structure
-//' @return None. The function is invoked for the side effect of display schema info.
+//' @return None. The function is invoked for the side effect of displaying the
+//' schema info.
 // [[Rcpp::export]]
 void describeArrowSchema(Rcpp::XPtr<ArrowSchema> ptr) {
     struct ArrowSchema* schema = schema_from_xptr(ptr, "");
@@ -23,7 +24,8 @@ void describeArrowSchema(Rcpp::XPtr<ArrowSchema> ptr) {
 //' Describe An Arrow Array
 //'
 //' @param ptr An external pointer object for an \code{ArrowArray} structure
-//' @return None. The function is invoked for the side effect of display schema info.
+//' @return None. The function is invoked for the side effect of displaingy some
+//' array info.
 // [[Rcpp::export]]
 void describeArrowArray(Rcpp::XPtr<ArrowArray> ptr) {
     struct ArrowArray* array = array_data_from_xptr(ptr, "");
@@ -33,3 +35,26 @@ void describeArrowArray(Rcpp::XPtr<ArrowArray> ptr) {
                 << "Buffers : " << array->n_buffers << "\n"
                 << "Children: " << array->n_children << "\n";
 }
+
+
+//' Print uint64_t vector
+//'
+//' @param ptr An external pointer object for an \code{uint64_t} vector
+//' @return None. The function is invoked for the side effect of display schema info.
+// [[Rcpp::export]]
+void print_uint64(Rcpp::XPtr<ArrowArray> ptr) {
+    struct ArrowArray* array = array_data_from_xptr(ptr, "");
+    const uint64_t *data = reinterpret_cast<const uint64_t*>(array->buffers[1]);
+    for (int64_t i = 0; i < array->length; i++) {
+        Rprintf("%llu\n", data[i]);
+    }
+}
+
+#if 0
+// r -lRcppArrow,arrow,narrow
+//   -e'v <- arrow::Array$create(1:5)$cast(arrow::uint64());
+//      print(v);
+//      n <- as_narrow_array(v, schema=narrow_schema("L"));
+//      print(n);
+//      print_uint64(n$array_data)'
+#endif

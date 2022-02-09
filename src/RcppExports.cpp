@@ -31,6 +31,16 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// print_uint64
+void print_uint64(Rcpp::XPtr<ArrowArray> ptr);
+RcppExport SEXP _RcppArrow_print_uint64(SEXP ptrSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::XPtr<ArrowArray> >::type ptr(ptrSEXP);
+    print_uint64(ptr);
+    return R_NilValue;
+END_RCPP
+}
 // extract_null_count
 SEXP extract_null_count(SEXP array_data_xptr);
 RcppExport SEXP _RcppArrow_extract_null_count(SEXP array_data_xptrSEXP) {
@@ -46,6 +56,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppArrow_describeArrowSchema", (DL_FUNC) &_RcppArrow_describeArrowSchema, 1},
     {"_RcppArrow_describeArrowArray", (DL_FUNC) &_RcppArrow_describeArrowArray, 1},
+    {"_RcppArrow_print_uint64", (DL_FUNC) &_RcppArrow_print_uint64, 1},
     {"_RcppArrow_extract_null_count", (DL_FUNC) &_RcppArrow_extract_null_count, 1},
     {NULL, NULL, 0}
 };

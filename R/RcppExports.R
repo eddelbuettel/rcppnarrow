@@ -4,7 +4,8 @@
 #' Describe An Arrow Schema
 #'
 #' @param ptr An external pointer object for an \code{ArrowSchema} structure
-#' @return None. The function is invoked for the side effect of display schema info.
+#' @return None. The function is invoked for the side effect of displaying the
+#' schema info.
 describeArrowSchema <- function(ptr) {
     invisible(.Call(`_RcppArrow_describeArrowSchema`, ptr))
 }
@@ -12,9 +13,18 @@ describeArrowSchema <- function(ptr) {
 #' Describe An Arrow Array
 #'
 #' @param ptr An external pointer object for an \code{ArrowArray} structure
-#' @return None. The function is invoked for the side effect of display schema info.
+#' @return None. The function is invoked for the side effect of displaingy some
+#' array info.
 describeArrowArray <- function(ptr) {
     invisible(.Call(`_RcppArrow_describeArrowArray`, ptr))
+}
+
+#' Print uint64_t vector
+#'
+#' @param ptr An external pointer object for an \code{uint64_t} vector
+#' @return None. The function is invoked for the side effect of display schema info.
+print_uint64 <- function(ptr) {
+    invisible(.Call(`_RcppArrow_print_uint64`, ptr))
 }
 
 #' Count Null Elements in Arrow Object

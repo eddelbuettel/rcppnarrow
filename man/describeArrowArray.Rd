@@ -10,7 +10,8 @@ describeArrowArray(ptr)
 \item{ptr}{An external pointer object for an \code{ArrowArray} structure}
 }
 \value{
-None. The function is invoked for the side effect of display schema info.
+None. The function is invoked for the side effect of displaingy some
+array info.
 }
 \description{
 Describe An Arrow Array
