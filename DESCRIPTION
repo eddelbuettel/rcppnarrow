@@ -7,6 +7,6 @@ Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: Leaning on the 'narrow' package for C-level access to 'Arrow' without requiring the full weight of that package.
 License: GPL (>= 2)
-Imports: Rcpp (>= 1.0.8), narrow
+Imports: Rcpp (>= 1.0.8)
 LinkingTo: Rcpp, narrow
 RoxygenNote: 6.0.1
