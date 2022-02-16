@@ -11,6 +11,17 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// narrow_array_info
+SEXP narrow_array_info(SEXP adptr);
+RcppExport SEXP _RcppArrow_narrow_array_info(SEXP adptrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type adptr(adptrSEXP);
+    rcpp_result_gen = Rcpp::wrap(narrow_array_info(adptr));
+    return rcpp_result_gen;
+END_RCPP
+}
 // describeArrowSchema
 void describeArrowSchema(Rcpp::XPtr<ArrowSchema> ptr);
 RcppExport SEXP _RcppArrow_describeArrowSchema(SEXP ptrSEXP) {
@@ -54,6 +65,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_RcppArrow_narrow_array_info", (DL_FUNC) &_RcppArrow_narrow_array_info, 1},
     {"_RcppArrow_describeArrowSchema", (DL_FUNC) &_RcppArrow_describeArrowSchema, 1},
     {"_RcppArrow_describeArrowArray", (DL_FUNC) &_RcppArrow_describeArrowArray, 1},
     {"_RcppArrow_print_uint64", (DL_FUNC) &_RcppArrow_print_uint64, 1},
