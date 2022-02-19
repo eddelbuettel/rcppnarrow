@@ -1,5 +1,9 @@
 #include <Rcpp/Lightest>
-#include "narrow.h"
+#if defined(HAVE_NARROW)
+#include <narrow.h>
+#else
+#include <arrow_c_api.h>
+#endif
 
 // A narrow_schema() is an external pointer to a struct ArrowSchema, a
 // narrow_array_data() is an external pointer to a struct ArrowArray,
@@ -13,12 +17,16 @@
 //' schema info.
 // [[Rcpp::export]]
 void describeArrowSchema(Rcpp::XPtr<ArrowSchema> ptr) {
+#if defined(HAVE_NARROW)
     struct ArrowSchema* schema = schema_from_xptr(ptr, "");
     Rcpp::Rcout << "Format  : " << schema->format << "\n"
                 << "Name    : " << schema->name  << "\n"
       // a list in R            << "Metadata: " << schema->metadata  << "\n"
                 << "Flags   : " << schema->flags  << "\n"
                 << "Children: " << schema->n_children << "\n";
+#else
+    message("Functionality unavailable. Rebuild the package with 'narrow' present.");
+#endif
 }
 
 //' Describe An Arrow Array
@@ -28,12 +36,16 @@ void describeArrowSchema(Rcpp::XPtr<ArrowSchema> ptr) {
 //' array info.
 // [[Rcpp::export]]
 void describeArrowArray(Rcpp::XPtr<ArrowArray> ptr) {
+#if defined(HAVE_NARROW)
     struct ArrowArray* array = array_data_from_xptr(ptr, "");
     Rcpp::Rcout << "Length  : " << array->length << "\n"
                 << "Nulls   : " << array->null_count << "\n"
                 << "Offset  : " << array->offset << "\n"
                 << "Buffers : " << array->n_buffers << "\n"
                 << "Children: " << array->n_children << "\n";
+#else
+    message("Functionality unavailable. Rebuild the package with 'narrow' present.");
+#endif
 }
 
 
@@ -43,11 +55,15 @@ void describeArrowArray(Rcpp::XPtr<ArrowArray> ptr) {
 //' @return None. The function is invoked for the side effect of display schema info.
 // [[Rcpp::export]]
 void print_uint64(Rcpp::XPtr<ArrowArray> ptr) {
+#if defined(HAVE_NARROW)
     struct ArrowArray* array = array_data_from_xptr(ptr, "");
     const uint64_t *data = reinterpret_cast<const uint64_t*>(array->buffers[1]);
     for (int64_t i = 0; i < array->length; i++) {
         Rprintf("%llu\n", data[i]);
     }
+#else
+    message("Functionality unavailable. Rebuild the package with 'narrow' present.");
+#endif
 }
 
 #if 0

@@ -6,8 +6,10 @@
 #' @param adxpt An external pointer to array data object
 #' @return A list with array info
 #' @examples
-#' x <- narrow::as_narrow_array(c(NA, 2, NA, 4:7))
-#' narrow_array_info(x$array_data)
+#' if (requireNamespace("narrow", quietly=TRUE) {
+#'     x <- narrow::as_narrow_array(c(NA, 2, NA, 4:7))
+#'     narrow_array_info(x$array_data)
+#' }
 narrow_array_info <- function(adptr) {
     .Call(`_RcppArrow_narrow_array_info`, adptr)
 }
