@@ -1,2 +1,0 @@
-
-PKG_CPPFLAGS = -I/usr/local/lib/R/site-library/narrow/include -DHAVE_NARROW

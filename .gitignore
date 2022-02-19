@@ -40,3 +40,5 @@ vignettes/*.pdf
 
 # Local
 /local
+src/Makevars
+src/Makevars.win
