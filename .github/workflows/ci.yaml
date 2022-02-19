@@ -35,7 +35,7 @@ jobs:
 
       - name: Add Narrow
         if: ${{ matrix.narrow == 'yes' }}
-        run: Rscript -e 'install.packages("narrow", repos="https://ghrr.github.io/drat")'
+        run: ./run.sh install_github eddelbuettel/narrow
         
       - name: Test
         run: ./run.sh run_tests
