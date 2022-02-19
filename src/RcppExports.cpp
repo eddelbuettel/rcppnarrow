@@ -53,7 +53,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // extract_null_count
-SEXP extract_null_count(SEXP array_data_xptr);
+int extract_null_count(SEXP array_data_xptr);
 RcppExport SEXP _RcppArrow_extract_null_count(SEXP array_data_xptrSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

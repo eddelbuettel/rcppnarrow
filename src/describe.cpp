@@ -25,7 +25,7 @@ void describeArrowSchema(Rcpp::XPtr<ArrowSchema> ptr) {
                 << "Flags   : " << schema->flags  << "\n"
                 << "Children: " << schema->n_children << "\n";
 #else
-    message("Functionality unavailable. Rebuild the package with 'narrow' present.");
+    Rcpp::Rcout << "Functionality unavailable. Rebuild the package with 'narrow' present.\n";
 #endif
 }
 
@@ -44,7 +44,7 @@ void describeArrowArray(Rcpp::XPtr<ArrowArray> ptr) {
                 << "Buffers : " << array->n_buffers << "\n"
                 << "Children: " << array->n_children << "\n";
 #else
-    message("Functionality unavailable. Rebuild the package with 'narrow' present.");
+    Rcpp::Rcout << "Functionality unavailable. Rebuild the package with 'narrow' present.\n";
 #endif
 }
 
@@ -62,7 +62,7 @@ void print_uint64(Rcpp::XPtr<ArrowArray> ptr) {
         Rprintf("%llu\n", data[i]);
     }
 #else
-    message("Functionality unavailable. Rebuild the package with 'narrow' present.");
+    Rcpp::Rcout << "Functionality unavailable. Rebuild the package with 'narrow' present.\n";
 #endif
 }
 

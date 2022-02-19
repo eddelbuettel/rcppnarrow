@@ -21,6 +21,6 @@ SEXP narrow_array_info(SEXP adptr) {
 #if defined(HAVE_NARROW)
     return(narrow_c_array_info(adptr));
 #else
-    return(R_NilValue)
+    return(R_NilValue);
 #endif
 }
