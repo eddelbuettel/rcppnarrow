@@ -13,7 +13,7 @@
 int extract_null_count(SEXP array_data_xptr) {
 #if defined(HAVE_NARROW)
     struct ArrowArray* array_data = (struct ArrowArray*) R_ExternalPtrAddr(array_data_xptr);
-    return Rf_ScalarInteger(array_data->null_count);
+    return array_data->null_count;
 #else
     Rcpp::Rcout << "Functionality unavailable. Rebuild the package with 'narrow' present.\n";
     return R_NaInt;
