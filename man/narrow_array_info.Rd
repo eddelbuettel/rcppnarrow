@@ -7,7 +7,7 @@
 narrow_array_info(adptr)
 }
 \arguments{
-\item{adxpt}{An external pointer to array data object}
+\item{adptr}{An external pointer to array data object}
 }
 \value{
 A list with array info
@@ -16,6 +16,8 @@ A list with array info
 Call array info
 }
 \examples{
-x <- narrow::as_narrow_array(c(NA, 2, NA, 4:7))
-narrow_array_info(x$array_data)
+if (requireNamespace("narrow", quietly=TRUE)) {
+    x <- narrow::as_narrow_array(c(NA, 2, NA, 4:7))
+    narrow_array_info(x$array_data)
+}
 }

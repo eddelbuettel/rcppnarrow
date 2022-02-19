@@ -9,10 +9,10 @@
 
 //' Call array info
 //'
-//' @param adxpt An external pointer to array data object
+//' @param adptr An external pointer to array data object
 //' @return A list with array info
 //' @examples
-//' if (requireNamespace("narrow", quietly=TRUE) {
+//' if (requireNamespace("narrow", quietly=TRUE)) {
 //'     x <- narrow::as_narrow_array(c(NA, 2, NA, 4:7))
 //'     narrow_array_info(x$array_data)
 //' }
