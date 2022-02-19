@@ -8,7 +8,9 @@
 //' @param array_data_xptr An external pointer to an Arrow object
 //' @return The number of null elements
 //' @examples
-//' extract_null_count(narrow::as_narrow_array(c(NA, NA, 1:5))$array_data)
+//' if (requireNamespace("narrow", quietly=TRUE)) {
+//'     extract_null_count(narrow::as_narrow_array(c(NA, NA, 1:5))$array_data)
+//' }
 // [[Rcpp::export]]
 int extract_null_count(SEXP array_data_xptr) {
 #if defined(HAVE_NARROW)

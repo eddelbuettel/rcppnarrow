@@ -3,8 +3,8 @@
 # usual trick to find R_HOME from R in PATH but allowing variable to overrule
 : "${R_HOME=`R RHOME`}"
 
-# just call the normal configure which is an R file here
-"${R_HOME}/bin/Rscript" configure
+# just call this R script
+"${R_HOME}/bin/Rscript" tools/configure.R
 
 # and use it here on Windows
 mv src/Makevars src/Makevars.win

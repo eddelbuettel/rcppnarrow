@@ -16,5 +16,7 @@ The number of null elements
 Count Null Elements in Arrow Object
 }
 \examples{
-extract_null_count(narrow::as_narrow_array(c(NA, NA, 1:5))$array_data)
+if (requireNamespace("narrow", quietly=TRUE)) {
+    extract_null_count(narrow::as_narrow_array(c(NA, NA, 1:5))$array_data)
+}
 }
