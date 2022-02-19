@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+: "${R_HOME=`R RHOME`}"
+"${R_HOME}/bin/Rscript" configure
+cp src/Makevars src/Makevars.win
