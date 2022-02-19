@@ -13,4 +13,6 @@ flag <- ifelse(haveNarrow(), paste0("-I", system.file("include", package="narrow
 
 txt <- readLines("src/Makevars.in")
 txt <- gsub("@NARROW@", flag, txt)
-writeLines(txt, "src/Makevars")
+con <- file("src/Makevars", "wb")       # to ensure we get unix line ends and no warning ...
+writeLines(txt, con, sep="\n")
+close(con)
