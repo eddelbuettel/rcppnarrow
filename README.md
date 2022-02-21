@@ -14,11 +14,15 @@ Our [fork of narrow](https://github.com/eddelbuettel/narrow) adds support for C-
 ### What
 
 Because neither [narrow](https://github.com/paleolimbot/narrow) nor our [fork of
-narrow](https://github.com/eddelbuettel/narrow) are on CRAN, the packages uses the fork via
-`Suggests:` which would normally prevent compile-time access---but we use the same approach of
+narrow](https://github.com/eddelbuettel/narrow) are on CRAN, this package uses the forked version
+via `Suggests:` which would normally prevent compile-time access---but we use the same approach of
 detecting in `configure` if `narrow` is present and if so enabling the extended build.
 
-So in essence we construct a 'Suggested LinkingTo:' that is optional.
+So in essence we construct a 'Suggested LinkingTo:' that is optional rather than the hard dependency
+imposed by an _unconditional_ 'LinkingTo'.
+(Note that this is not a new trick; [RcppRedis](https://cloud.r-project.org/package=RcppRedis) has used
+[RcppMsgPack](https://cloud.r-project.org/package=RcppMsgPack) as an optional package-build-time
+resource in the same way.)
 
 ### Who
 
