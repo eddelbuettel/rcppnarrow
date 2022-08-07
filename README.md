@@ -1,9 +1,9 @@
 
-## RcppArrow: Light(er)weight Arrow Data Structure Interface
+## RcppNarrow: Light(er)weight Arrow Data Structure Interface
 
-[![CI](https://github.com/eddelbuettel/rcpparrow/actions/workflows/ci.yaml/badge.svg)](https://github.com/eddelbuettel/rcpparrow/actions/workflows/ci.yaml)
+[![CI](https://github.com/eddelbuettel/rcppnarrow/actions/workflows/ci.yaml/badge.svg)](https://github.com/eddelbuettel/rcppnarrow/actions/workflows/ci.yaml)
 [![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcpparrow)](https://github.com/eddelbuettel/rcpparrow)
+[![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppnarrow)](https://github.com/eddelbuettel/rcppnarrow)
 
 ### What and Why
 

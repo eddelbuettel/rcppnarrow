@@ -1,6 +1,6 @@
-Package: RcppArrow
+Package: RcppNarrow
 Type: Package
-Title: First Steps Around Arrow
+Title: First Steps Around 'narrow'
 Version: 0.0.1
 Date: 2022-02-07
 Author: Dirk Eddelbuettel

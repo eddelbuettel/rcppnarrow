@@ -11,7 +11,7 @@
 #'     narrow_array_info(x$array_data)
 #' }
 narrow_array_info <- function(adptr) {
-    .Call(`_RcppArrow_narrow_array_info`, adptr)
+    .Call(`_RcppNarrow_narrow_array_info`, adptr)
 }
 
 #' Describe An Arrow Schema
@@ -20,7 +20,7 @@ narrow_array_info <- function(adptr) {
 #' @return None. The function is invoked for the side effect of displaying the
 #' schema info.
 describeArrowSchema <- function(ptr) {
-    invisible(.Call(`_RcppArrow_describeArrowSchema`, ptr))
+    invisible(.Call(`_RcppNarrow_describeArrowSchema`, ptr))
 }
 
 #' Describe An Arrow Array
@@ -29,7 +29,7 @@ describeArrowSchema <- function(ptr) {
 #' @return None. The function is invoked for the side effect of displaingy some
 #' array info.
 describeArrowArray <- function(ptr) {
-    invisible(.Call(`_RcppArrow_describeArrowArray`, ptr))
+    invisible(.Call(`_RcppNarrow_describeArrowArray`, ptr))
 }
 
 #' Print uint64_t vector
@@ -37,7 +37,7 @@ describeArrowArray <- function(ptr) {
 #' @param ptr An external pointer object for an \code{uint64_t} vector
 #' @return None. The function is invoked for the side effect of display schema info.
 print_uint64 <- function(ptr) {
-    invisible(.Call(`_RcppArrow_print_uint64`, ptr))
+    invisible(.Call(`_RcppNarrow_print_uint64`, ptr))
 }
 
 #' Count Null Elements in Arrow Object
@@ -49,6 +49,6 @@ print_uint64 <- function(ptr) {
 #'     extract_null_count(narrow::as_narrow_array(c(NA, NA, 1:5))$array_data)
 #' }
 extract_null_count <- function(array_data_xptr) {
-    .Call(`_RcppArrow_extract_null_count`, array_data_xptr)
+    .Call(`_RcppNarrow_extract_null_count`, array_data_xptr)
 }
 

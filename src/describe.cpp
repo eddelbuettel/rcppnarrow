@@ -67,7 +67,7 @@ void print_uint64(Rcpp::XPtr<ArrowArray> ptr) {
 }
 
 #if 0
-// r -lRcppArrow,arrow,narrow
+// r -lRcppNarrow,arrow,narrow
 //   -e'v <- arrow::Array$create(1:5)$cast(arrow::uint64());
 //      print(v);
 //      n <- as_narrow_array(v, schema=narrow_schema("L"));
