@@ -7,9 +7,16 @@
 
 ### What and Why
 
-The [arrow](https://cloud.r-project.org/package=arrow) package is featureful but can be a little challenging to install (from source, on Linux, for CI, ...).
-The [narrow](https://github.com/paleolimbot/narrow) package (also named at earlier times, respectively, `arrowc`, `arrowvctrs`, `carrow` and `sparrow`) provides a very clean and dependency-free interface for (portable) C interface of Arrow.
-Our [fork of narrow](https://github.com/eddelbuettel/narrow) adds support for C-level access from another package---which is what we test and demonstrate here.
+The [arrow](https://cloud.r-project.org/package=arrow) package is featureful but can be a little
+challenging to install (from source, on Linux, for CI, ...).  The
+[narrow](https://github.com/paleolimbot/narrow) package (also named at earlier times, respectively,
+`arrowc`, `arrowvctrs`, `carrow` and `sparrow`) provides a very clean and dependency-free interface
+for (portable) C interface of Arrow.  Our [fork of narrow](https://github.com/eddelbuettel/narrow)
+adds support for C-level access from another package---which is what we test and demonstrate here.
+
+The [narrow](https://github.com/paleolimbot/narrow) package, following on its earlier five names,
+now morphed into the [arrow-nanoarrow](https://github.com/apache/arrow-nanoarrow) package which the
+[RcppNanoarrow](https://github.com/eddelbuettel/rcppnanoarrow) package tracks.
 
 ### What
 
