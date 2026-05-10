@@ -1,4 +1,5 @@
 #include <Rcpp/Lightest>
+#include <cstdint>
 #if defined(HAVE_NARROW)
 #include <narrow.h>
 #else

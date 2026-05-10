@@ -4,6 +4,7 @@
 // This is then included by the generated RcppExports.h
 
 #include <Rcpp/Lightest>
+#include <cstdint>
 #if defined(HAVE_NARROW)
 #include <narrow.h>
 #else
