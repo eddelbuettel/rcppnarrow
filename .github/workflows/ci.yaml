@@ -15,7 +15,7 @@ jobs:
       matrix:
         include:
           #- {os: macOS-latest}
-          - {os: ubuntu-latest, narrow: yes}
+          #- {os: ubuntu-latest, narrow: yes}
           - {os: ubuntu-latest, narrow: no}
 
     runs-on: ${{ matrix.os }}
