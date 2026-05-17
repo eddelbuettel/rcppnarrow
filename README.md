@@ -5,6 +5,11 @@
 [![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppnarrow)](https://github.com/eddelbuettel/rcppnarrow)
 
+### Status
+
+This repository is 'dormant': the package here was a fairly brief trial made
+around 2022, current efforts are elsewhere.
+
 ### What and Why
 
 The [arrow](https://cloud.r-project.org/package=arrow) package is featureful but can be a little
