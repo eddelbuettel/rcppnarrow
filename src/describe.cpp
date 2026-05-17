@@ -60,7 +60,7 @@ void print_uint64(Rcpp::XPtr<ArrowArray> ptr) {
     struct ArrowArray* array = array_data_from_xptr(ptr, "");
     const uint64_t *data = reinterpret_cast<const uint64_t*>(array->buffers[1]);
     for (int64_t i = 0; i < array->length; i++) {
-        Rprintf("%llu\n", data[i]);
+        Rprintf("%lu\n", data[i]);
     }
 #else
     Rcpp::Rcout << "Functionality unavailable. Rebuild the package with 'narrow' present.\n";
